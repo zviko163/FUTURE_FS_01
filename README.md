@@ -1,2 +1,2 @@
 # FUTURE_FS_01
-Task 1 - Future Interns Full Stack Web Development Track
+Task 1 (Personal Portfolio) - Future Interns Full Stack Web Development Track
