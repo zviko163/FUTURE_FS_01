@@ -1,0 +1,29 @@
+{
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.4"
+  },
+  "dependencies": {
+    "npx": "^3.0.0"
+  },
+  "name": "future_fs_01",
+  "version": "1.0.0",
+  "description": "Task 1 (Personal Portfolio) - Future Interns Full Stack Web Development Track",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zviko163/FUTURE_FS_01.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/zviko163/FUTURE_FS_01/issues"
+  },
+  "homepage": "https://github.com/zviko163/FUTURE_FS_01#readme"
+}
