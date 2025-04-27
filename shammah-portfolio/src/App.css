@@ -3,6 +3,22 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%;
+}
+
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  background-color: #fafaf9;
+  z-index: -1;
+}
+
+:root[class='dark'] .screen {
+  background-color: #292524;
 }
 
 .logo {
