@@ -29,7 +29,7 @@ const Hero = () => {
               View Projects
             </button>
             <button className="px-8 py-3 border-2 border-stone-300 dark:border-stone-600 hover:border-amber-600 dark:hover:border-amber-500 text-stone-800 dark:text-stone-500 rounded-full font-medium transition-all duration-300 hover:scale-105">
-              Contact Me
+              Download Resume
             </button>
           </div>
         </motion.div>

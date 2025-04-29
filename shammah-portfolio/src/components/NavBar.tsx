@@ -21,10 +21,12 @@ export default function NavBar({ darkMode, setDarkMode }: NavBarProps) {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Home</a>
-            <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Community</a>
-            <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Resources</a>
             <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">About</a>
+            <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Education</a>
+            {/* <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Projects</a> */}
+            <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Experience</a>
+            <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Leadership</a>
+            <a href="#" className="text-gray-700 dark:text-gray-200 transition-colors duration-300 font-medium hover:!text-[#d97706]">Interests</a>
           </div>
           
           {/* Right Section: Contact & Mobile Menu */}
