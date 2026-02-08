@@ -46,7 +46,7 @@ const Experience = () => {
         viewport={{ once: true }}
         className="mb-16"
       >
-        <span className="text-amber-600 dark:text-amber-500 font-medium tracking-wider uppercase text-sm">02. Experience</span>
+        <span className="text-amber-600 dark:text-amber-500 font-medium tracking-wider uppercase text-sm">04. Experience</span>
         <h2 className="text-4xl md:text-5xl font-bold mt-2 text-stone-900 dark:text-stone-100">
           Where I've <br />
           <span className="text-stone-400 dark:text-stone-600">worked.</span>

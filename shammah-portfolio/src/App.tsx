@@ -5,6 +5,7 @@ import Hero from './components/Hero'
 import About from './components/About'     
 import Projects from './components/Projects' 
 import Experience from './components/Experience'
+import Research from './components/Research'
 import './App.css'
 
 function App() {
@@ -35,8 +36,9 @@ function App() {
         <main className="flex flex-col gap-0"> {/* Gap-0 because sections have their own padding */}
           <Hero />
           <About />
-          <Experience />
           <Projects />
+          <Research />
+          <Experience />
         </main>
         
         {/* Simple Footer */}
