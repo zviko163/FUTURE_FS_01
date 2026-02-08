@@ -17,15 +17,13 @@ export default function NavBar({ darkMode, setDarkMode }: NavBarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = ["About", "Experience", "Projects", "Interests"];
+  // UPDATED LINK LIST
+  const navLinks = ["About", "Projects", "Research", "Experience"];
 
   return (
     <div className={`fixed top-0 left-0 right-0 z-50 flex justify-center transition-all duration-300 ${scrolled ? 'pt-4' : 'pt-6'}`}>
       
-      {/* THE FLOATING ISLAND 
-        - We use 'w-[95%]' to ensure it doesn't touch edges on mobile
-        - 'backdrop-blur-xl' gives it that premium glass feel
-      */}
+      {/* THE FLOATING ISLAND */}
       <nav 
         className={`
           relative w-[95%] max-w-5xl rounded-full border border-stone-200/40 dark:border-stone-700/40
@@ -36,7 +34,7 @@ export default function NavBar({ darkMode, setDarkMode }: NavBarProps) {
         <div className="flex items-center justify-between">
             
           {/* Logo Section */}
-          <div className="flex items-center gap-2 group cursor-pointer">
+          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <div className="p-2 rounded-full bg-gradient-to-tr from-amber-100 to-amber-200 dark:from-amber-900/50 dark:to-amber-800/30 text-amber-700 dark:text-amber-500 group-hover:rotate-12 transition-transform duration-300 shadow-sm">
               <Sparkles size={22} strokeWidth={2.5} />
             </div>
@@ -45,7 +43,7 @@ export default function NavBar({ darkMode, setDarkMode }: NavBarProps) {
             </span>
           </div>
             
-          {/* Desktop Menu - Centered */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1 bg-stone-100/50 dark:bg-stone-800/50 rounded-full px-2 py-1.5 border border-stone-200/50 dark:border-stone-700/50">
             {navLinks.map((link) => (
               <a 
@@ -75,9 +73,12 @@ export default function NavBar({ darkMode, setDarkMode }: NavBarProps) {
             </button>
 
             {/* CTA Button */}
-            <button className="hidden md:block px-6 py-2.5 bg-stone-900 dark:bg-stone-50 text-stone-50 dark:text-stone-900 text-sm font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+            <a 
+              href="mailto:shammah.dzwairo@ashesi.edu.gh"
+              className="hidden md:block px-6 py-2.5 bg-stone-900 dark:bg-stone-50 text-stone-50 dark:text-stone-900 text-sm font-bold rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+            >
               Let's Talk
-            </button>
+            </a>
             
             {/* Mobile Hamburger */}
             <button
@@ -90,9 +91,7 @@ export default function NavBar({ darkMode, setDarkMode }: NavBarProps) {
         </div>
       </nav>
 
-      {/* Mobile Dropdown - Now a "Floating Card" underneath the main bar 
-        instead of a full-screen list 
-      */}
+      {/* Mobile Dropdown */}
       <div 
         className={`
           absolute top-full left-0 right-0 mt-4 mx-4 md:hidden
@@ -113,9 +112,9 @@ export default function NavBar({ darkMode, setDarkMode }: NavBarProps) {
             </a>
           ))}
           <div className="h-px bg-stone-200 dark:bg-stone-800 my-2" />
-          <button className="w-full py-4 bg-amber-600 text-white font-bold rounded-2xl shadow-lg shadow-amber-600/20 active:scale-95 transition-all">
+          <a href="mailto:shammah.dzwairo@ashesi.edu.gh" className="block w-full py-4 text-center bg-amber-600 text-white font-bold rounded-2xl shadow-lg shadow-amber-600/20 active:scale-95 transition-all">
             Let's Talk
-          </button>
+          </a>
         </div>
       </div>
     </div>

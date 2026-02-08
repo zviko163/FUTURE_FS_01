@@ -9,7 +9,7 @@ const researchItems = [
     stats: ["Low-Resource NLP", "NLLB & Whisper", "Telephony Pipeline"], 
     abstract: "Developing a real-time conversational agent for Shona, a low-resource Bantu language. The research focuses on minimizing translation loss between Automatic Speech Recognition (Whisper) and Neural Machine Translation (NLLB) layers. The system integrates with telephony gateways to democratize access to digital services for non-English speaking farmers in Zimbabwe.",
     links: [
-      { label: "View Architecture", url: "#" },
+      { label: "View Architecture", url: "https://farming-app-architec-ysnv.bolt.host" },
     ],
     tags: ["NLP", "Voice AI", "Python", "Research"]
   },
