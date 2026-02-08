@@ -6,6 +6,7 @@ import About from './components/About'
 import Projects from './components/Projects' 
 import Experience from './components/Experience'
 import Research from './components/Research'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
@@ -41,10 +42,7 @@ function App() {
           <Experience />
         </main>
         
-        {/* Simple Footer */}
-        <footer className="py-8 text-center text-stone-500 text-sm border-t border-stone-200 dark:border-stone-800/50 mt-12 bg-white/30 dark:bg-black/20 backdrop-blur-sm">
-          <p>© {new Date().getFullYear()} Shammah Dzwairo. Built with React & Tailwind.</p>
-        </footer>
+        <Footer />
       </div>
     </div>
   );

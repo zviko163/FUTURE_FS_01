@@ -52,7 +52,7 @@ const Research = () => {
           <div className="p-2 rounded-lg bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400">
             <Microscope size={24} />
           </div>
-          <span className="text-indigo-600 dark:text-indigo-400 font-medium tracking-wider uppercase text-sm">R&D and Ventures</span>
+          <span className="text-indigo-600 dark:text-indigo-400 font-medium tracking-wider uppercase text-sm">3.0 R&D and Ventures</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-bold text-stone-900 dark:text-stone-100">
           Exploration & <br />
