@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FileText, ArrowUpRight, Microscope, Mic, Globe } from 'lucide-react';
+import { FileText, ArrowUpRight, Microscope, Mic } from 'lucide-react';
 
 const researchItems = [
   {

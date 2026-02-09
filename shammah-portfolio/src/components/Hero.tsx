@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, Terminal } from 'lucide-react';
+import myImage from '/src/assets/images/shammah.jpg'
 
 const Hero = () => {
   // Animation variants
@@ -95,7 +96,7 @@ const Hero = () => {
                     If you don't have one yet, it will show a gray placeholder.
                  */}
                 <img 
-                  src="/src/assets/images/shammah.jpg" 
+                  src={myImage} 
                   alt="Shammah Dzwairo"
                   className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
                 />

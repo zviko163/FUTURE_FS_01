@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Server, Cpu, Users, Globe, Terminal, Wifi, 
-  MapPin, Mail, Linkedin, Github, Clock, Copy, Check, Download 
+  Mail, Linkedin, Github, Clock, Copy, Check, Download 
 } from 'lucide-react';
 
 const About = () => {
