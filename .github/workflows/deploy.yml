@@ -1,0 +1,45 @@
+name: Deploy Portfolio to VPS
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            # Stop the script if any command fails
+            set -e
+
+            # 1. Navigate to the Repository Root on VPS
+            cd ~/apps/FUTURE_FS_01
+
+            # 2. Pull the latest code from GitHub
+            git pull origin main
+
+            # 3. Enter the specific project folder where the Dockerfile is located
+            cd shammah-portfolio
+
+            # 4. Stop and remove any old container (if it exists)
+            # '|| true' ensures the script doesn't crash if this is the first run
+            docker stop portfolio-container || true
+            docker rm portfolio-container || true
+
+            # 5. Build the Docker Image
+            # The '.' now correctly refers to the 'shammah-portfolio' folder
+            docker build -t portfolio .
+
+            # 6. Run the new Container
+            # We map VPS Port 8081 -> Container Port 80
+            docker run -d \
+              --name portfolio-container \
+              --restart unless-stopped \
+              -p 8081:80 \
+              portfolio
