@@ -89,7 +89,7 @@ const Projects = () => {
 
       {/* Grid Layout - 5 Items Logic */}
       {/* The classes below ensure the last item centers itself if it's alone on a row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         
         {projects.map((project, i) => {
           // Logic: First 4 items span 2 cols (making a 3-col grid effectively). 
@@ -105,7 +105,7 @@ const Projects = () => {
               transition={{ delay: i * 0.1 }}
               className={`
                 group relative rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 overflow-hidden hover:shadow-2xl hover:shadow-stone-900/10 dark:hover:shadow-black/50 transition-all duration-500 flex flex-col
-                ${i >= 3 ? 'lg:col-span-3' : 'lg:col-span-2'} 
+                
               `}
               // ^ CSS TRICK: This makes the top 3 items take 1/3 width each, and bottom 2 items take 1/2 width each. 
               // This creates a perfect "3 on top, 2 on bottom" layout.
