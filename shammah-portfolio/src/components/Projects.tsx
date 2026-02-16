@@ -52,7 +52,7 @@ const projects = [
     category: "Fintech & Backend",
     desc: "A robust financial backend handling user accounts, peer-to-peer money transfers, and transaction history. Features secure authentication and interactive API documentation via Swagger.",
     tags: ["Java Spring Boot", "MySQL", "Docker", "Swagger UI"],
-    links: { demo: "http://194.147.58.241:8082/swagger-ui/index.html", code: "https://github.com/zviko163/FUTURE_FS_01" },
+    links: { demo: "http://194.147.58.241:8082/swagger-ui/index.html", code: "https://github.com/zviko163/E-Wallet-Java-Spring-.git" },
     private: false,
     color: "from-cyan-600 to-blue-700"
   },
