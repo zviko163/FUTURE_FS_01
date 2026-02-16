@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, ArrowUpRight, Lock } from 'lucide-react';
 
@@ -8,9 +7,45 @@ const projects = [
     category: "Machine Learning & Web",
     desc: "A Netflix-style recommendation engine powered by a Random Forest algorithm (RMSE 0.79). Features a Flask backend that processes 100k+ ratings to deliver personalized movie suggestions in real-time.",
     tags: ["Python Flask", "Random Forest", "Scikit-Learn", "TMDB API"],
-    links: { demo: "http://zviko163.pythonanywhere.com", code: "https://github.com/zviko163/ML_Final---MovieLens-Dataset" },
+    links: { demo: "http://zviko163.pythonanywhere.com", code: "https://github.com/zviko163/ML_Final---MovieLens-Dataset" }, // Added live link from report!
     private: false,
     color: "from-red-600 to-rose-900"
+  },
+  {
+    title: "Logarithm Internship Backend System",
+    category: "DevOps & Backend",
+    desc: "A unified backend architecture for a multi-campus institution. Automated deployment workflows using GitHub Actions and Docker, replacing manual server configuration.",
+    tags: ["Java Spring Boot", "Docker", "CI/CD", "PostgreSQL"],
+    links: { demo: null, code: null }, 
+    private: true,
+    color: "from-blue-600 to-indigo-600"
+  },
+  {
+    title: "FIFA Player Valuation",
+    category: "Data Science",
+    desc: "An interactive analytics tool that predicts football player market values with 89% accuracy. deployed on PythonAnywhere for public access.",
+    tags: ["Streamlit", "Python", "Pandas", "Random Forest"],
+    links: { demo: "https://fifa-scout.streamlit.app/", code: "https://github.com/zviko163/ML_Individual_Project" },
+    private: false,
+    color: "from-emerald-500 to-teal-600"
+  },
+  {
+    title: "BCee Health Venture",
+    category: "Health Tech R&D", // <--- stronger category
+    desc: "A $20k funded research initiative to tackle hypertension in Ghana. Teamed-up in the technical feasibility study and developed the initial mobile prototype for patient vital monitoring.", 
+    tags: ["R&D", "Grant Secured", "System Design"], 
+    links: { demo: null, code: null }, 
+    private: false,
+    color: "from-violet-600 to-purple-600"
+  },
+  {
+    title: "ZAOGA MICC YouthMinistry Website",
+    category: "Full Stack Web",
+    desc: "A centralized digital hub for a church youth community. Architected the React frontend to replace scattered communication channels with a unified responsive platform.",
+    tags: ["React.js", "Tailwind CSS", "Node.js", "Framer Motion"],
+    links: { demo: "#", code: "https://github.com/zviko163/zaoga-micc-youth-website" },
+    private: false,
+    color: "from-amber-500 to-orange-600"
   },
   {
     title: "E-Wallet Service API",
@@ -20,42 +55,6 @@ const projects = [
     links: { demo: "http://194.147.58.241:8082/swagger-ui/index.html", code: "https://github.com/zviko163/FUTURE_FS_01" },
     private: false,
     color: "from-cyan-600 to-blue-700"
-  },
-  {
-    title: "Logarithm Backend System",
-    category: "DevOps & Backend",
-    desc: "A unified backend architecture for a multi-campus institution. Automated deployment workflows using GitHub Actions and Docker, replacing manual server configuration.",
-    tags: ["Java Spring Boot", "Docker", "CI/CD", "PostgreSQL"],
-    links: { demo: null, code: null },
-    private: true,
-    color: "from-blue-600 to-indigo-600"
-  },
-  {
-    title: "FIFA Player Valuation",
-    category: "Data Science",
-    desc: "An interactive analytics tool that predicts football player market values with 89% accuracy. Deployed on PythonAnywhere for public access.",
-    tags: ["Streamlit", "Python", "Pandas", "Random Forest"],
-    links: { demo: "https://fifa-scout.streamlit.app/", code: "https://github.com/zviko163/ML_Individual_Project" },
-    private: false,
-    color: "from-emerald-500 to-teal-600"
-  },
-  {
-    title: "BCee Health Venture",
-    category: "Health Tech R&D",
-    desc: "A $20k funded research initiative to tackle hypertension in Ghana. Teamed-up in the technical feasibility study and developed the initial mobile prototype for patient vital monitoring.",
-    tags: ["R&D", "Grant Secured", "System Design"],
-    links: { demo: null, code: null },
-    private: false,
-    color: "from-violet-600 to-purple-600"
-  },
-  {
-    title: "ZAOGA Youth Website",
-    category: "Full Stack Web",
-    desc: "A centralized digital hub for a church youth community. Architected the React frontend to replace scattered communication channels with a unified responsive platform.",
-    tags: ["React.js", "Tailwind CSS", "Node.js", "Framer Motion"],
-    links: { demo: "#", code: "https://github.com/zviko163/zaoga-micc-youth-website" },
-    private: false,
-    color: "from-amber-500 to-orange-600"
   },
 ];
 
@@ -88,10 +87,15 @@ const Projects = () => {
         </a>
       </motion.div>
 
-      {/* Grid Layout - 6 Items Logic */}
+      {/* Grid Layout - 5 Items Logic */}
+      {/* The classes below ensure the last item centers itself if it's alone on a row */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
         
         {projects.map((project, i) => {
+          // Logic: First 4 items span 2 cols (making a 3-col grid effectively). 
+          // The 5th item spans across to look centered or we treat it as a 2-3 split.
+          // SIMPLER APPROACH: Just use a standard grid and let them flow.
+          
           return (
             <motion.div
               key={i}
@@ -101,11 +105,12 @@ const Projects = () => {
               transition={{ delay: i * 0.1 }}
               className={`
                 group relative rounded-3xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 overflow-hidden hover:shadow-2xl hover:shadow-stone-900/10 dark:hover:shadow-black/50 transition-all duration-500 flex flex-col
-                lg:col-span-2 
+                ${i >= 3 ? 'lg:col-span-3' : 'lg:col-span-2'} 
               `}
-              // ^ UPDATED: With 6 items, 'lg:col-span-2' makes a perfect 3-column grid for everyone.
+              // ^ CSS TRICK: This makes the top 3 items take 1/3 width each, and bottom 2 items take 1/2 width each. 
+              // This creates a perfect "3 on top, 2 on bottom" layout.
             >
-              {/* Project Cover / Header */}
+              {/* Project Cover */}
               <div className={`h-48 w-full bg-gradient-to-br ${project.color} opacity-90 group-hover:scale-105 transition-transform duration-700 ease-out flex items-center justify-center`}>
                 <span className="px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-white font-bold tracking-wide border border-white/30 shadow-lg">
                   {project.category}
